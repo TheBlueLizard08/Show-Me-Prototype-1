@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dysdlt7gr2wwd"]
+
+[ext_resource type="Script" path="res://scripts/slice_script.gd" id="1_ylldk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qqeb"]
+size = Vector2(29, 36)
+
+[node name="Fish" type="Area2D"]
+script = ExtResource("1_ylldk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-128.5, 4)
+shape = SubResource("RectangleShape2D_4qqeb")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(-140, -2, 346, 0)
+default_color = Color(0.6, 0.0352941, 0.141176, 1)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
